@@ -27,3 +27,4 @@ Set-Alias vim nvim
 Set-Alias rn Rename-Item
 Set-Alias im Import-Module
 Set-Alias ll ls
+Set-Alias c clear
