@@ -22,6 +22,14 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 # fzf Set-PSFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl-r'
 
 # Alias 
+if(Test-Path -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git") {
+    function git_all([string]$msg) {
+        git add .
+        git commit -m $msg
+        git push
+    }
+}
+
 Set-Alias .. cd..
 Set-Alias vim nvim
 Set-Alias rn Rename-Item
