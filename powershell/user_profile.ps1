@@ -26,7 +26,6 @@ Set-Alias .. cd..
 Set-Alias vim nvim
 Set-Alias rn Rename-Item
 Set-Alias im Import-Module
-Set-Alias ll ls
 Set-Alias c clear
 if(Test-Path -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git") {
     function git_all([string]$msg) {
@@ -35,4 +34,5 @@ if(Test-Path -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git") {
         git push
     }
 }
+function ll { Get-ChildItem | Format-Wide }
 

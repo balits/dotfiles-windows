@@ -19,13 +19,13 @@
           }
         },
         {
-          "type": "text",
+          "type": "time",
           "style": "powerline",
           "powerline_symbol": "",
-          "background": "#000000",
+          "background": "#007FFF",
           "foreground": "#C9D1D9",
           "properties": {
-            "text": "\uf755"
+            "time_format": "15:04"
           }
         },
         {
@@ -49,23 +49,6 @@
         }
       ]
       
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
-        {
-          "type": "time",
-          "style": "diamond",
-          "leading_diamond": "\ue0b2",
-          "trailing_diamond": "\ue0b4",
-          "background": "#000000",
-          "foreground": "#C9D1D9",
-          "properties": {
-            "time_format": "15:04"
-          }
-        }
-      ]
     },
     {
       "type":"prompt",
