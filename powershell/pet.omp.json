@@ -12,7 +12,7 @@
           "style": "diamond",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "", 
-          "foreground": "#C9D1D9",
+          "foreground": "#d7e2ec",
           "background": "#000000",
           "properties": {
             "style": "agnoster_full"
@@ -23,7 +23,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "background": "#007FFF",
-          "foreground": "#C9D1D9",
+          "foreground": "#d7e2ec",
           "properties": {
             "time_format": "15:04"
           }

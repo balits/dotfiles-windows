@@ -1,22 +1,16 @@
-if (Test-Path -Path "$HOME\scoop") {
-    scoop update
-    scoop update *
-}
-
 
 function print_format($App, $Installed) {
     if ($Installed -eq $true) {
-        Write-Host $App -Foreground Blue -NoNewLine
-        Write-Host " Already installed."  -Foreground Green   
+        Write-Host "'$App' Already installed."  -Foreground Green   
     } else {
-        Write-Host $App  -Foreground Blue -NoNewLine
-        Write-Host " Installing..."  -Foreground Red
+        Write-Host $App  -Foreground Blue
+        Write-Host "Installing '$APP'"  -Foreground Yellow
     }
 }
 
 
 # neovim
-if(Test-Path -Path "$HOME\scoop\apps\neovim") {
+if (Get-Command 'nvim') {
     print_format -App "neovim" $true
 }
 else {
@@ -24,7 +18,7 @@ else {
     scoop install neovim 
 }
  # git
-if(Test-Path -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Git") {
+if (Get-Command 'git') {
     print_format -App 'Git for Windows' $true
 } else {
     print_format -App 'Git for Windows' $false
@@ -79,7 +73,7 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\PSFzf") {
 
     Install-Module -Name PSFzf -Scope Currentuser -Force
 }
-if(Test-Path -Path "$HOME\scoop\apps\fzf") {
+if(Get-Command 'fzf') {
     print_format 'fzf' $true
 } else {
     print_format 'fzf' $false
