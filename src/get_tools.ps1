@@ -1,4 +1,6 @@
 
+
+
 function print_format($App, $Installed) {
     if ($Installed -eq $true) {
         Write-Host "'$App' Already installed."  -Foreground Green   
@@ -7,7 +9,6 @@ function print_format($App, $Installed) {
         Write-Host "Installing '$APP'"  -Foreground Yellow
     }
 }
-
 
 # neovim
 if (Get-Command 'nvim') {
