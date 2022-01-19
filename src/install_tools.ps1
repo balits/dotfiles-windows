@@ -1,6 +1,4 @@
-
-
-
+. $PSScriptRoot\setup.ps1
 function print_format($App, $Installed) {
     if ($Installed -eq $true) {
         Write-Host "'$App' Already installed."  -Foreground Green   
@@ -18,12 +16,12 @@ else {
     print_format -App "neovim" $false
     scoop install neovim 
 }
- # git
+# git
 if (Get-Command 'git') {
     print_format -App 'Git for Windows' $true
 } else {
     print_format -App 'Git for Windows' $false
-
+    
     winget install -e --id Git.Git    
 }
 
@@ -46,7 +44,7 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\PSReadLine") {
     print_format 'PSReadLine' $true
 } else {
     print_format 'PSReadLine' $false
-
+    
     Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
 }
 
@@ -55,7 +53,7 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\oh-my-posh") {
     print_format 'oh-my-posh' $true
 } else {
     print_format 'oh-my-posh' $false
-
+    
     Install-Module oh-my-posh -Scope Currentuser -Force
 }
 
@@ -63,7 +61,7 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\posh-git") {
     print_format 'posh-git' $true
 } else {
     print_format 'posh-git' $false
-
+    
     Install-Module posh-git -Scope Currentuser -Force
 }
 # fuzzy finder
@@ -71,7 +69,7 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\PSFzf") {
     print_format 'PSFzf' $true
 } else {
     print_format 'PSFzf' $false
-
+    
     Install-Module -Name PSFzf -Scope Currentuser -Force
 }
 if(Get-Command 'fzf') {
@@ -79,3 +77,8 @@ if(Get-Command 'fzf') {
 } else {
     print_format 'fzf' $false
 }
+
+write-host $config_path
+Write-Host "Scoop applications listed below:" -ForegroundColor Green
+Write-Host "------------------------------------" -ForegroundColor Green
+Get-ChildItem $config_path\scoop

@@ -1,3 +1,4 @@
+$config_path = (Split-Path $PSScriptRoot)
 
 # set custom PWSH settings to the microsoft.psprofile
 ". $env:USERPROFILE\.config\powershell\user_profile.ps1
