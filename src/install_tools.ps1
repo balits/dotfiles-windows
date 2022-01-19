@@ -1,4 +1,3 @@
-. $PSScriptRoot\setup.ps1
 function print_format($App, $Installed) {
     if ($Installed -eq $true) {
         Write-Host "'$App' Already installed."  -Foreground Green   
@@ -9,7 +8,7 @@ function print_format($App, $Installed) {
 }
 
 # neovim
-if (Get-Command 'nvim') {
+if (Get-Command -Type Cmdlet 'nvim' -ErrorAction SilentlyContinue) {
     print_format -App "neovim" $true
 }
 else {
@@ -17,7 +16,7 @@ else {
     scoop install neovim 
 }
 # git
-if (Get-Command 'git') {
+if (Get-Command 'git' -ErrorAction SilentlyContinue) {
     print_format -App 'Git for Windows' $true
 } else {
     print_format -App 'Git for Windows' $false
@@ -26,7 +25,7 @@ if (Get-Command 'git') {
 }
 
 # terminal-icons
-if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\Terminal-Icons") {
+if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\Terminal-Icons" ) {
     print_format "Terminal-Icons" $true
 } else {
     print_format "Terminal-Icons" $false
@@ -72,13 +71,14 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\PSFzf") {
     
     Install-Module -Name PSFzf -Scope Currentuser -Force
 }
-if(Get-Command 'fzf') {
+if(Get-Command 'fzf' -ErrorAction SilentlyContinue) {
     print_format 'fzf' $true
 } else {
     print_format 'fzf' $false
+
+    scoop install fzf
 }
 
-write-host $config_path
-Write-Host "Scoop applications listed below:" -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-Get-ChildItem $config_path\scoop
+# write-host $config_path
+# Write-Host "Scoop applications listed below:" -ForegroundColor Green
+# Write-Host "------------------------------------" -ForegroundColor Green
