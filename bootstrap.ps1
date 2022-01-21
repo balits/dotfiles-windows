@@ -8,4 +8,6 @@ if (Get-Command "scoop" SilentlyContinue) {
 
 Write-Host "Bootsrap.ps1 is running just fine!" -ForegroundColor Blue
 
-
+Get-ChildItem $PSScriptRoot\src -Exclude practice.ps1 | ForEach-Object {
+    &$_.FullName
+}
