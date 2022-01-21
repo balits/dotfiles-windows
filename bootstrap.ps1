@@ -1,7 +1,9 @@
 if (Get-Command -Type Cmdlet 'scoop' -ErrorAcion SilentlyContinue) {
-    write-host "Scoop is installed"
+    write-host "Scoop is already installed"
 } else {
-    &$PSScriptRoot\src\scoop_installation.ps1
+    iwr -useb get.scoop.sh | iex
 }
+
+Write-Host "Bootsrap.ps1 is running just fine!" -ForegroundColor Red
 
 
