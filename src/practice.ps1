@@ -10,5 +10,4 @@
 # Invoke-Expression (new-object net.webclient).downloadstring('https://get.scoop.sh') 
 # ---------------------------------------------------------------------------------------------
 
-
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')

@@ -1,3 +1,7 @@
+Write-Host "install_tools.ps1 runs just fine" -ForegroundColor Yellow
+Write-Host "Configuring Powershell Profile" -ForegroundColor Yellow
+Write-Host "------------------------------" -ForegroundColor Yellow
+
 # # set custom PWSH settings to the microsoft.psprofile
 # ". $env:USERPROFILE\.config\powershell\user_profile.ps1
 # Import-Module posh-git
@@ -13,5 +17,5 @@
 # }
 
 # vscode...
-
-Write-Host "install_tools.ps1 runs just fine" -ForegroundColor Yellow
+    
+Write-Host "Done!" -ForegroundColor Green
