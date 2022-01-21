@@ -12,7 +12,7 @@ or
 iwr -useb get.scoop.sh | iex
 ``` 
 
-Now that scoop is installed, you can see your apps at "USERPROFILE\scoop".
+Now that scoop is installed, you can see your apps at "USERPROFILE\scoop\apps".
 
 ## Installing Git for Windows
 To clone this repo, first install Git for Windows!
@@ -23,7 +23,7 @@ winget install -e --id Git.Git
 ## Cloning this repository
 With Git for Windows installed, use this command to clone this repo.
 
-Since this is meant to be installed to "USERPROFILE\.config", use copy this command to clone.
+Since this is meant to be installed to "USERPROFILE\\.config", use copy this command to clone.
 ```sh
 cdx; git clone "https://github.com/balits/.config"; .\.config\main.ps1
 ```
