@@ -15,15 +15,6 @@ else {
     print_format -App "neovim" $false
     scoop install neovim 
 }
-# git
-if (Get-Command 'git' -ErrorAction SilentlyContinue) {
-    print_format -App 'Git for Windows' $true
-} else {
-    print_format -App 'Git for Windows' $false
-    
-    winget install -e --id Git.Git    
-}
-
 # terminal-icons
 if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\Terminal-Icons" ) {
     print_format "Terminal-Icons" $true
