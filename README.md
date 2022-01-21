@@ -12,8 +12,8 @@ or
 iwr -useb get.scoop.sh | iex
 ``` -->
 
-Now scoop is installed to '<userprofile>\scoop'.
-Appliactions installed with scoop reside in '<userprofile>\scoop\apps'.
+Now scoop is installed to 'userprofile\scoop'.
+Appliactions installed with scoop reside in 'userprofile\scoop\apps'.
 
 To clone this repo, first install Git for Windows
 ```sh
