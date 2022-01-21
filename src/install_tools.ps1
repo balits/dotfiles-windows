@@ -11,7 +11,7 @@ function print_format($App, $Installed) {
 }
 
 # neovim
-if (Get-Command -Type Cmdlet 'nvim' -ErrorAction SilentlyContinue) {
+if (Get-Command "nvim" SilentlyContinue) {
     print_format -App "neovim" $true
 }
 else {
@@ -65,7 +65,7 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\PSFzf") {
     
     Install-Module -Name PSFzf -Scope Currentuser -Force
 }
-if(Get-Command 'fzf' -ErrorAction SilentlyContinue) {
+if(Get-Command "fzf" SilentlyContinue) {
     print_format 'fzf' $true
 } else {
     print_format 'fzf' $false
