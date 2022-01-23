@@ -32,12 +32,12 @@ That's it!
 
 
 # Neovim
-After executing '\.config\main.ps1', Neovim is downloaded via Scoop
+After executing '\.config\main.ps1', Neovim is downloaded via Scoop.
 
-# Vim-Plug
-To use Neovim with the downloaded plugins, first you need to install Vim-Plug
+## Vim-Plug
+To use Neovim with the downloaded plugins, first you need to install Vim-Plug.
 
-Use this to change your working directory
+Use this to change your working directory:
 ```sh
 cd $HOME\AppData\Local\nvim;
 ```
@@ -47,6 +47,8 @@ This will download Vim-Plug
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
 ```
+
+After you've downloaded Vim-Plug, open you init.vim file, and tpye ```sh:PlugInstall``` to download the plugins.
 
 
 
