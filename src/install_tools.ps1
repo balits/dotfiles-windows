@@ -1,18 +1,19 @@
-Write-Host "Installing tools and modules" -ForegroundColor Yellow
-Write-Host "----------------------------" -ForegroundColor Yellow
+Write-Host "Installing tools and modules" -ForegroundColor Gray
+Write-Host "----------------------------" -ForegroundColor Gray
 
 function print_format($App, $Installed) {
     if ($Installed -eq $true) {
-        Write-Host "'$App' Already installed."  -Foreground Green   
+        Write-Host "'$App' - Already installed."  -Foreground Green   
     } else {
         Write-Host $App  -Foreground Blue
-        Write-Host "Installing '$APP'"  -Foreground Yellow
+        Write-Host "'$APP' - Installing..."  -Foreground Yellow
     }
 }
 
 # neovim
-if (Get-Command "nvim" SilentlyContinue) {
+if (Get-Command -CommandType Cmdlet 'nvim' -ErrorAction SilentlyContinue ) {
     print_format -App "neovim" $true
+    scoop update neovim
 }
 else {
     print_format -App "neovim" $false
@@ -65,12 +66,10 @@ if(Test-Path -Path "$HOME\Documents\PowerShell\Modules\PSFzf") {
     
     Install-Module -Name PSFzf -Scope Currentuser -Force
 }
-if(Get-Command "fzf" SilentlyContinue) {
+if(Get-Command -CommandType Cmdlet 'fzf' -ErrorAction SilentlyContinue ) {
     print_format 'fzf' $true
 } else {
     print_format 'fzf' $false
 
     scoop install fzf
 }
-
-Write-Host "Done!" -ForegroundColor Green
