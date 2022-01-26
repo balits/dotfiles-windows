@@ -22,14 +22,12 @@ winget install -e --id Git.Git
 
 With Git for Windows installed, use this command to clone this repo.
 After that, execute 'main.ps1', to start the setup procedure!
-
-Since this is meant to be installed to "USERPROFILE\\.config", use copy this command to clone.
 ```sh
 cdx; git clone "https://github.com/balits/.config"; .\.config\main.ps1
 ```
+Since this is meant to be installed to "USERPROFILE\\.config", use copy this command to clone.
 
 That's it!
-
 
 # Neovim
 After executing '\.config\main.ps1', Neovim is downloaded via Scoop.
